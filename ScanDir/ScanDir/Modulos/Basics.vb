@@ -8,6 +8,7 @@
 
 
         Dim sw As New System.IO.StreamWriter(FicheroLogger, True)
+
         Dim cadFechaInsert As String = Now.Year & "-" & _
                                         String.Format("{0:00}", CInt(Now.Month.ToString)) & "-" & _
                                         String.Format("{0:00}", CInt(Now.Day.ToString)) & " " & _
