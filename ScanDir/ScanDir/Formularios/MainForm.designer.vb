@@ -23,7 +23,6 @@ Partial Class MainForm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -35,9 +34,10 @@ Partial Class MainForm
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout
-        Me.SuspendLayout
+        Me.StatusStrip1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'Label1
         '
@@ -50,20 +50,11 @@ Partial Class MainForm
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Directorio de Entrada"
         '
-        'Label2
-        '
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(12, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(367, 49)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Label2"
-        '
         'Button1
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(410, 50)
+        Me.Button1.Location = New System.Drawing.Point(638, 50)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 48)
         Me.Button1.TabIndex = 2
@@ -76,9 +67,9 @@ Partial Class MainForm
         '
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(410, 135)
+        Me.Button2.Location = New System.Drawing.Point(638, 119)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(104, 46)
+        Me.Button2.Size = New System.Drawing.Size(104, 48)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Procesar"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -142,6 +133,7 @@ Partial Class MainForm
         '
         Me.ListView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(15, 187)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(744, 216)
@@ -150,7 +142,7 @@ Partial Class MainForm
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(578, 63)
+        Me.Button4.Location = New System.Drawing.Point(410, 106)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 13
@@ -158,11 +150,20 @@ Partial Class MainForm
         Me.Button4.UseVisualStyleBackColor = True
         Me.Button4.Visible = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(15, 50)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(617, 48)
+        Me.TextBox1.TabIndex = 14
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(769, 467)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.CheckBox2)
@@ -171,7 +172,6 @@ Partial Class MainForm
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -179,13 +179,12 @@ Partial Class MainForm
         Me.Text = "ScanDIR"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents Button2 As System.Windows.Forms.Button
@@ -197,4 +196,5 @@ Partial Class MainForm
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents Button4 As Windows.Forms.Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

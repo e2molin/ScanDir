@@ -5,7 +5,7 @@ Public Class MainForm
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
         FolderBrowserDialog1.ShowDialog()
-        Label2.Text = FolderBrowserDialog1.SelectedPath
+        TextBox1.Text = FolderBrowserDialog1.SelectedPath
 
     End Sub
 
@@ -13,11 +13,11 @@ Public Class MainForm
 
         Dim ProcEscaneo As ScanDir
         Dim ListaExtensiones() As String
-        If Label2.Text.Trim = "" Then
-            ErrorProvider1.SetError(Label2, "Debe seleccionar un directorio")
+        If TextBox1.Text.Trim = "" Then
+            ErrorProvider1.SetError(TextBox1, "Debe seleccionar un directorio")
             Exit Sub
         Else
-            ErrorProvider1.SetError(Label2, "")
+            ErrorProvider1.SetError(TextBox1, "")
         End If
         If CheckBox1.Checked = True Then
             ReDim ListaExtensiones(0 To 2)
@@ -45,7 +45,7 @@ Public Class MainForm
 
 
         Me.Cursor = Cursors.WaitCursor
-        If ProcEscaneo.ListarFicherosDIR(Label2.Text, ListaExtensiones) = 0 Then
+        If ProcEscaneo.ListarFicherosDIR(TextBox1.Text, ListaExtensiones) = 0 Then
             ToolStripStatusLabel1.Text = "Terminado. " &
                                 "Directorios: " & ProcEscaneo.NumeroDirectorios & ". " &
                                 "Ficheros: " & ProcEscaneo.NumeroFicheros
@@ -64,7 +64,7 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Label2.Text = ""
+        TextBox1.Text = ""
         ToolStripStatusLabel1.Text = "Preparado"
     End Sub
 
